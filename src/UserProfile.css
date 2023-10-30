@@ -1,0 +1,51 @@
+.image-container {
+            display: flex; 
+            justify-content: center;
+        }
+
+.image-container img {
+            width: 200px; 
+            height: auto; 
+            margin-right: 20px; 
+        }
+        
+.image-container p {
+            font-size: 65px; 
+            color: #000000; 
+            font-weight: bold; 
+        }
+        
+.text-boxes {
+			display: flex; 
+			flex-direction: column;
+			align-items: center;
+            justify-content: center;
+		}  
+		
+.text-box-container {
+			display: flex;
+            align-items: center;
+            font-size: 45px; 
+            color: #000000; 
+            font-weight: normal; 
+            text-align: center;
+            flex: 1;
+        }		
+   
+.boxes {
+			width: 200px;
+}
+ 
+.back-button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+body {
+			background-image: url("UserProfileBackground.png"); 
+    		background-size: cover;
+    		background-repeat: no-repeat;
+}     
