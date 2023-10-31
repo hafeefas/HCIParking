@@ -170,6 +170,8 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+  
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -237,7 +239,10 @@ export default function PrimarySearchAppBar() {
             </StyledIconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
+
             <StyledIconButton
+
+
               size="large"
               aria-label="show more"
               aria-controls={mobileMenuId}
