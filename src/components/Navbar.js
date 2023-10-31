@@ -46,7 +46,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -56,11 +55,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const StyledIconButton = styled(IconButton)({
+  
+  color: "inherit", 
+});
+
 export default function PrimarySearchAppBar() {
-  // State to control the drawer
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 
-  // Handle opening and closing of the drawer
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
   };
@@ -132,13 +134,17 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+        <StyledIconButton
+          size="large"
+          aria-label="show 4 new mails"
+          color="inherit"
+        >
           <Badge badgeContent={4} color="error"></Badge>
-        </IconButton>
+        </StyledIconButton>
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton
+        <StyledIconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
@@ -146,19 +152,19 @@ export default function PrimarySearchAppBar() {
           <Badge badgeContent={17} color="error">
             <NotificationsIcon />
           </Badge>
-        </IconButton>
+        </StyledIconButton>
         <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
+        <StyledIconButton
           size="large"
-          aria-label="account of current user"
+          aria-label="account of the current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
         >
           <AccountCircle />
-        </IconButton>
+        </StyledIconButton>
         <p>Profile</p>
       </MenuItem>
     </Menu>
@@ -170,17 +176,16 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          
-          <IconButton
+          <StyledIconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={handleDrawerOpen}
           >
             <MenuIcon />
-          </IconButton>
-
+          </StyledIconButton>
           <Typography
             variant="h6"
             noWrap
@@ -199,7 +204,7 @@ export default function PrimarySearchAppBar() {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
-          {/* Add text "list" to open the drawer */}
+          <StyledIconButton>
           <Typography
             variant="h6"
             noWrap
@@ -209,32 +214,35 @@ export default function PrimarySearchAppBar() {
           >
             List
           </Typography>
-
-
+          </StyledIconButton>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
+            <StyledIconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
+                
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
-            <IconButton
+            </StyledIconButton>
+            <StyledIconButton
               size="large"
               edge="end"
-              aria-label="account of current user"
+              aria-label="account of the current user"
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
               <AccountCircle />
-            </IconButton>
+            </StyledIconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
+
+            <StyledIconButton
+
+
               size="large"
               aria-label="show more"
               aria-controls={mobileMenuId}
@@ -243,12 +251,173 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <MoreIcon />
-            </IconButton>
+            </StyledIconButton>
           </Box>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+      <Drawer
+        anchor="top"
+        open={isDrawerOpen}
+        onClose={handleDrawerClose}
+      >
+        List of Spots: {/* seed code--put into indiv component later */}
+        <table border="1">
+        <tr>
+            <th>Spot #</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>OPEN</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>OPEN</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Reserved</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Occupied</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Reserved</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>OPEN</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>OPEN</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>OPEN</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>OPEN</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Reserved</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Reserved</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>OPEN</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>Reserved</td>
+        </tr>
+    </table>
+      </Drawer>
     </Box>
   );
 }
