@@ -4,6 +4,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
+import CancelPresentationTwoTone from "@mui/icons-material/CancelPresentationTwoTone";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
@@ -57,12 +58,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const StyledIconButton = styled(IconButton)({
-  
-  color: "inherit", 
+  color: "inherit",
 });
 
 export default function PrimarySearchAppBar() {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+//for closing the drawer
+  const handleCloseDrawer = () => {
+    setDrawerOpen(false);
+  };
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -161,8 +165,6 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
-  
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -177,15 +179,15 @@ export default function PrimarySearchAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <StyledIconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
-            onClick={handleDrawerOpen}
-          >
-            List
-          </Typography>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
+              onClick={handleDrawerOpen}
+            >
+              List
+            </Typography>
           </StyledIconButton>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <StyledIconButton
@@ -193,7 +195,6 @@ export default function PrimarySearchAppBar() {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-                
               <Badge badgeContent={17} color="error">
                 <NotificationsIcon />
               </Badge>
@@ -211,10 +212,7 @@ export default function PrimarySearchAppBar() {
             </StyledIconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-
             <StyledIconButton
-
-
               size="large"
               aria-label="show more"
               aria-controls={mobileMenuId}
@@ -234,8 +232,16 @@ export default function PrimarySearchAppBar() {
         open={isDrawerOpen}
         onClose={handleDrawerClose}
       >
-
-       <SpotsTable/>
+        <div style={{ padding: '16px' }}>
+          <SpotsTable />
+          <IconButton
+            style={{ position: 'absolute', top: '16px', right: '16px' }}
+            color="inherit"
+            onClick={handleCloseDrawer}
+          >
+            <CancelPresentationTwoTone />
+          </IconButton>
+        </div>
       </Drawer>
     </Box>
   );
