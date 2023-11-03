@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Drawer from "@mui/material/Drawer";
+import SpotsTable from "../SpotsTable";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -136,16 +137,6 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <StyledIconButton
           size="large"
-          aria-label="show 4 new mails"
-          color="inherit"
-        >
-          <Badge badgeContent={4} color="error"></Badge>
-        </StyledIconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <StyledIconButton
-          size="large"
           aria-label="show 17 new notifications"
           color="inherit"
         >
@@ -176,16 +167,6 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <StyledIconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-            onClick={handleDrawerOpen}
-          >
-            <MenuIcon />
-          </StyledIconButton>
           <Typography
             variant="h6"
             noWrap
@@ -194,15 +175,6 @@ export default function PrimarySearchAppBar() {
           >
             Parking Project
           </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
           <Box sx={{ flexGrow: 1 }} />
           <StyledIconButton>
           <Typography
@@ -263,7 +235,7 @@ export default function PrimarySearchAppBar() {
         onClose={handleDrawerClose}
       >
 
-       <spotsTable/>
+       <SpotsTable/>
       </Drawer>
     </Box>
   );
