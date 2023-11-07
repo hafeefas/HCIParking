@@ -65,7 +65,7 @@ const StyledIconButton = styled(IconButton)({
 
 export default function PrimarySearchAppBar() {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
-//for closing the drawer
+  //for closing the drawer
   const handleCloseDrawer = () => {
     setDrawerOpen(false);
   };
@@ -119,9 +119,9 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>
-  <Link to='/user-profiles' target="_blank">Profiles</Link>
-</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My fsaccount</MenuItem>
+        <Link to='/user-profiles'>Profiles</Link>
+      </MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
 
