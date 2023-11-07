@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import UserProfile from './UserProfile/UserProfile.js'
 import Navbar from "./components/Navbar"
 import SpotsTable from "./spotstable/SpotsTable.js";
-
+import GMap from "./components/GMap";
 
 function App() {
   // Data Structures for Parking Spots
@@ -22,7 +22,7 @@ function App() {
 
         {/*NavBar is rendered across all routes */}
         <Navbar />
-        {/* <SpotsTable /> */}
+        <GMap />
         <Routes>
           <Route path="/" element={<SpotsTable />} />
           <Route path="/user-profiles" element={<UserProfile />} />
