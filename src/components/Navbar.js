@@ -65,7 +65,7 @@ const StyledIconButton = styled(IconButton)({
 
 export default function PrimarySearchAppBar() {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
-  //for closing the drawer
+//for closing the drawer
   const handleCloseDrawer = () => {
     setDrawerOpen(false);
   };
