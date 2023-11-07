@@ -1,5 +1,5 @@
 import React from 'react';
-import './SpotsTable.css'; // Import the CSS file
+import './styles.css'
 
 function SpotsTable() {
     const spotsData = [];

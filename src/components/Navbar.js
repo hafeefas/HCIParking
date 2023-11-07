@@ -18,7 +18,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Drawer from "@mui/material/Drawer";
-import SpotsTable from "../SpotsTable";
+import SpotsTable from "../spotstable/SpotsTable";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -65,7 +65,7 @@ const StyledIconButton = styled(IconButton)({
 
 export default function PrimarySearchAppBar() {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
-  //for closing the drawer
+//for closing the drawer
   const handleCloseDrawer = () => {
     setDrawerOpen(false);
   };
@@ -119,7 +119,7 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>
-        <Link to='/user-profiles'>Profiles</Link>
+        <Link to='/user-profiles'> Profiles</Link>
       </MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>

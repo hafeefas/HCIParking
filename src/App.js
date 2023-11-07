@@ -1,11 +1,10 @@
 
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
-import UserProfile from './UserProfile.js'
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import UserProfile from './UserProfile/UserProfile.js'
 import Navbar from "./components/Navbar"
-import SpotsTable from "./SpotsTable"
-
+import SpotsTable from "./spotstable/SpotsTable.js";
 
 function App() {
   // Data Structures for Parking Spots
@@ -24,8 +23,8 @@ function App() {
         <Navbar />
         {/* <SpotsTable /> */}
         <Routes>
-        <Route path = "/" element = {<SpotsTable/>} />
-        <Route path="/user-profiles" element={<UserProfile />} />
+          <Route path="/" element={<SpotsTable />} />
+          <Route path="/user-profiles" element={<UserProfile />} />
         </Routes>
       </Router>
 
