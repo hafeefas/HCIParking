@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import UserProfile from './UserProfile/UserProfile.js'
 import Navbar from "./components/Navbar"
 import SpotsTable from "./spotstable/SpotsTable.js";
+import r
 
 function App() {
   // Data Structures for Parking Spots
