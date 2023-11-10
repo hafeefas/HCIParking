@@ -16,23 +16,26 @@
     <div class="text-boxes">
     	<div class="text-box-container">
     		<p>Name:</p>
-    		<input type="text" class="boxes" placeholder="Enter name">
+    		<input type="text" class="boxes" id="nameInput" placeholder="Enter name">
+    		<p class="display-text" id="displayName"></p>
     	</div>
     	
     	<div class="text-box-container">
     		<p>Address:</p>
-    		<input type="text" class="boxes" placeholder="Enter address">   	
+    		<input type="text" class="boxes" id="addressInput" placeholder="Enter address"> 
+    		<p class="display-text" id="displayAddress"></p>
     	</div>
     	
     	<div class="text-box-container">
     		<p>Accessibility Needs:</p>
-    		<input type="text" class="boxes" placeholder="Enter accessibility needs">   	
+    		<input type="text" class="boxes" id="accessibilityInput" placeholder="Enter accessibility needs"> 
+    		<p class="display-text" id="displayAccessibility"></p>	
     	</div>	 	
     </div>
     
     <div class="button-container">
     	<button class="back-button" onclick="goBack()">Back</button>
-    	<button class="confirm-button">Confirm Changes</button>
+    	<button class="edit-button" onclick="toggleEditMode()">Enter Confirmation Mode</button>    	
     </div>
     
 </body>
