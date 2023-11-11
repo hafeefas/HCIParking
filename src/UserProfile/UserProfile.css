@@ -46,7 +46,7 @@
             align-items: center;
         }
  
-.back-button, .confirm-button {
+.back-button, .edit-button {
             background-color: red;
             color: white;
             padding: 10px 20px;
@@ -54,12 +54,12 @@
             cursor: pointer;
         }
         
-.confirm-button {
-            background-color: green; /* Green for the confirm button */
+.edit-button {
+            background-color: green; 
         }
         
 body {
-			background-image: url("UserProfileBackground.png"); 
+		background-image: url("UserProfileBackground.png"); 
     		background-size: cover;
     		background-repeat: no-repeat;
 }  
