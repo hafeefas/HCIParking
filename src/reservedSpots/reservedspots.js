@@ -16,7 +16,7 @@ function ReservedSpot() {
         You'll have 10 minutes to confirm your reserved parking space.
       </p>
       <p id="timer">10:00</p>
-      <a href="#" className="Back-btn">
+      <a href="javascript:history.back()" className="Back-btn">
         Go Back
       </a>
       <a href="#" className="Confirm-btn">
