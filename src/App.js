@@ -6,6 +6,8 @@ import UserProfile from './UserProfile/UserProfile.js'
 import Navbar from "./components/Navbar"
 import SpotsTable from "./spotstable/SpotsTable.js";
 import GMap from "./components/GMap";
+import ReservedSpot from "./reservedSpots/reservedspots.js";
+
 
 function App() {
   // Data Structures for Parking Spots
@@ -26,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SpotsTable />} />
           <Route path="/user-profiles" element={<UserProfile />} />
+          <Route path="/reserve-spots" element={<ReservedSpot />} />
         </Routes>
       </Router>
 
