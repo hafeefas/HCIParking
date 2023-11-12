@@ -1,40 +1,37 @@
-
-import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import UserProfile from './UserProfile/UserProfile.js'
-import Navbar from "./components/Navbar"
+import UserProfile from './UserProfile/UserProfile.js';
+import Navbar from "./components/Navbar";
 import SpotsTable from "./spotstable/SpotsTable.js";
 import MMap from "./mainMap/mMap";
 import ReservedSpot from "./reservedSpots/reservedspots";
 
 function App() {
-  // Data Structures for Parking Spots
-  const parkingSpots = new Map();
+  const [spots, setSpots] = useState(new Map(
+    Array.from({ length: 37 }, (_, i) => [i + 1, "OPEN"])
+  ));
 
-  for (let i = 1; i <= 37; i++) {
-    parkingSpots.set(i, "OPEN");
-    console.log(i + " " + parkingSpots.get(i));
-  }
+  const reserveSpot = (spotNumber) => {
+    setSpots(new Map(spots).set(spotNumber, "RESERVED"));
+  };
+
+  const cancelReservation = (spotNumber) => {
+    setSpots(new Map(spots).set(spotNumber, "OPEN"));
+  };
 
   return (
     <div>
       <Router>
-
-        {/*NavBar is rendered across all routes */}
-        <Navbar />
+        <Navbar spots={spots}/>
         <MMap />
         <Routes>
-          <Route path="/" element={<SpotsTable />} />
+          <Route path="/" element={<SpotsTable spots={spots} />} />
           <Route path="/user-profiles" element={<UserProfile />} />
-
-          <Route path="/reservedSpots/:spotNumber" element={<ReservedSpot />} />
+          <Route path="/reservedSpots/:spotNumber" element={<ReservedSpot spots={spots} reserveSpot={reserveSpot} cancelReservation={cancelReservation} />} />
         </Routes>
       </Router>
     </div>
   );
 }
-
-
 
 export default App;
