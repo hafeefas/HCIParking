@@ -38,6 +38,14 @@ function ReservedSpot() {
       window.alert("Your reservation time has expired."); 
     }
   };
+  const handleConfirmSpot = () => {
+    if (timerExpired) {
+      window.alert("You cannot confirm this parking spot anymore as your reservation time has expired. Please go back to the main page to reserve a new spot.");
+    } else {
+      // Navigate to the confirmation page
+     // window.location.href = '/confirmation-page'; // Replace with actual route
+    }
+  };
 
   // Call the updateTimer function every 1 second
   useEffect(() => {
@@ -52,23 +60,7 @@ function ReservedSpot() {
     updateTimer();
   }, []); // Empty dependency array ensures the effect runs only once (on mount)
 
-<<<<<<< Updated upstream
   const { spotNumber } = useParams();
-=======
- 
- // Handle click event for "Confirm Spot" button
-const handleConfirmSpot = () => {
-  if (timerExpired) {
-    window.alert("You cannot confirm this parking spot anymore as your reservation time has expired. Please go back to the main page to reserve a new spot.");
-  } else {
-    
-    //Navigate to the confirmation page
-    //window.location.href = '/confirmation-page'; // Replace with actual route
-  }
-};
-
-
->>>>>>> Stashed changes
   return (
     <div>
       <hr className="top-line" />

@@ -1,5 +1,5 @@
 .mapContainer {
-    background-image: url('/workspaces/HCIParking/src/mainMap/Satellite2.jpeg');
+    background-image: url('./Satellite2.jpeg');
     height: 100vh;
     background-size: cover;
     background-position: center;
