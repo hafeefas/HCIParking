@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css'
 
 function SpotsTable() {
@@ -11,7 +12,7 @@ function SpotsTable() {
         return spotsData.map(spot => (
           <tr key={spot.spotNumber}>
             <td>{spot.spotNumber}</td>
-            <td>{spot.spotStatus}</td>
+            <td><Link to={`/reserve-spots/${spot.spotNumber}`}>{spot.spotStatus}</Link></td>
           </tr>
         ));
       };

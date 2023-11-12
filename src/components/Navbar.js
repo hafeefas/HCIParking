@@ -11,11 +11,9 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Drawer from "@mui/material/Drawer";
 import SpotsTable from "../spotstable/SpotsTable";
@@ -64,19 +62,19 @@ const StyledIconButton = styled(IconButton)({
 });
 
 export default function PrimarySearchAppBar() {
-  const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+  // const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 //for closing the drawer
-  const handleCloseDrawer = () => {
-    setDrawerOpen(false);
-  };
+  // const handleCloseDrawer = () => {
+  //   setDrawerOpen(false);
+  // };
 
-  const handleDrawerOpen = () => {
-    setDrawerOpen(true);
-  };
+  // const handleDrawerOpen = () => {
+  //   setDrawerOpen(true);
+  // };
 
-  const handleDrawerClose = () => {
-    setDrawerOpen(false);
-  };
+  // const handleDrawerClose = () => {
+  //   setDrawerOpen(false);
+  // };
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -121,7 +119,6 @@ export default function PrimarySearchAppBar() {
       <MenuItem onClick={handleMenuClose}>
         <Link to='/user-profiles'> Profiles</Link>
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
 
@@ -142,18 +139,7 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <StyledIconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </StyledIconButton>
-        <p>Notifications</p>
-      </MenuItem>
+      
       <MenuItem onClick={handleProfileMenuOpen}>
         <StyledIconButton
           size="large"
@@ -182,27 +168,7 @@ export default function PrimarySearchAppBar() {
             Parking Project
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <StyledIconButton>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
-              onClick={handleDrawerOpen}
-            >
-              List
-            </Typography>
-          </StyledIconButton>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <StyledIconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </StyledIconButton>
             <StyledIconButton
               size="large"
               edge="end"
@@ -231,22 +197,6 @@ export default function PrimarySearchAppBar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-      <Drawer
-        anchor="top"
-        open={isDrawerOpen}
-        onClose={handleDrawerClose}
-      >
-        <div style={{ padding: '16px' }}>
-          <SpotsTable />
-          <IconButton
-            style={{ position: 'absolute', top: '16px', right: '16px' }}
-            color="inherit"
-            onClick={handleCloseDrawer}
-          >
-            <CancelPresentationTwoTone />
-          </IconButton>
-        </div>
-      </Drawer>
     </Box>
   );
 }

@@ -28,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SpotsTable />} />
           <Route path="/user-profiles" element={<UserProfile />} />
-          <Route path="/reserve-spots" element={<ReservedSpot />} />
+          <Route path="/reserve-spots/:spotNumber" element={<ReservedSpot />} />
         </Routes>
       </Router>
 
