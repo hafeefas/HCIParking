@@ -98,7 +98,6 @@ export default function PrimarySearchAppBar({ spots}) {
       <MenuItem onClick={handleMenuClose}>
         <Link to='/user-profiles'> Profiles</Link>
       </MenuItem>
-     
     </Menu>
   );
 
@@ -119,6 +118,18 @@ export default function PrimarySearchAppBar({ spots}) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      <MenuItem>
+        <StyledIconButton
+          size="large"
+          aria-label="show 17 new notifications"
+          color="inherit"
+        >
+          <Badge badgeContent={17} color="error">
+            <NotificationsIcon />
+          </Badge>
+        </StyledIconButton>
+        <p>Notifications</p>
+      </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <StyledIconButton
           size="large"
@@ -147,6 +158,17 @@ export default function PrimarySearchAppBar({ spots}) {
             Parking Project
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
+          <StyledIconButton>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
+              onClick={handleDrawerOpen}
+            >
+              Current Spot Availability
+            </Typography>
+          </StyledIconButton>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <StyledIconButton
               size="large"
