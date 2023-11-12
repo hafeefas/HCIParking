@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { GoogleMap, LoadScript, TrafficLayer } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, TrafficLayer, Marker } from "@react-google-maps/api";
+
 
 function GMap() {
   const [map, setMap] = useState(null);
@@ -13,6 +14,12 @@ function GMap() {
     lat: 40.6305372434552, 
     lng: -73.95243164504681,
   };
+
+  const markers = [
+    { id: 1, position: { lat: 40.63022376128623, lng: -73.95244505545564 } }, 
+    { id: 2, position: { lat: 40.63035981700881, lng: -73.95247072899502 } }, 
+    // Add more markers as needed
+  ];
 
   const onLoad = (map) => {
     setMap(map);
@@ -32,6 +39,14 @@ function GMap() {
         zoomControl= "false"
         >
           <TrafficLayer />
+    
+          {markers.map((marker) => (
+          <Marker
+            key={marker.id}
+            position={marker.position}
+          />
+        ))}
+
         </GoogleMap>
 
         
