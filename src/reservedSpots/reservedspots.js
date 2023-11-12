@@ -1,14 +1,15 @@
 import React from 'react';
-
-
+import { useParams } from 'react-router-dom';
 import './reservedSpot.css';
 
+
 function ReservedSpot() {
+  const { spotNumber } = useParams();
   return (
     <div>
       <hr className="top-line" />
       <div className="header">
-        <h1 className="title-prompt">Thank You For Reserving!</h1>
+        <h1 className="title-prompt">Thank You For Reserving Spot #{spotNumber}!</h1>
         <img className="logo" src="checkmark.png" alt="Checkmark" />
       </div>
       <p className="timeleft-prompt">

@@ -1,47 +1,34 @@
-//import Satellite2 from ""./Satellite2.jpeg"
+import React from "react";
+import { Link } from 'react-router-dom';
+import "./mMap.css";
 
-//the table to be displayed on the main page
-var mMap = document.createElement('table');
-mMap.style.borderCollapse = 'collapse';
-mMap.style.borderSpacing = '0';
-//mMap.style.backgroundImage = Satellite2; // Replace with your image URL
-
-// body of the table
-var tbody = document.createElement('tbody');
-
-for (var row = 1; row <= 6; row++) {
-  var tr = document.createElement('tr');
-
-  for (var col = 1; col <= 18; col++) {
-    var td = document.createElement('td');
-    td.style.border = '1px solid black';
-    td.style.fontFamily = 'Arial, sans-serif';
-    td.style.fontSize = '14px';
-    td.style.overflow = 'hidden';
-    td.style.padding = '10px 5px';
-    td.style.wordBreak = 'normal';
-    td.style.textAlign = 'left';
-    td.style.verticalAlign = 'top';
-
-    // numbering the first and last rows
-    if (row === 1) {
-      td.appendChild(document.createTextNode(col));
+function mMap() {
+  const rows = [];
+  for (let row = 1; row <= 7; row++) {
+    const cells = [];
+    for (let col = 1; col <= 18; col++) {
+      const spotNumber = row === 1 ? col : col + 18;
+      cells.push(
+        <td key={col} className="table-cell">
+          {(row === 1 || row === 7) && (
+            // Correct usage of template literals for dynamic path
+            <Link to={`/reservedSpots/${spotNumber}`}>{spotNumber}</Link>
+          )}
+        </td>
+      );
     }
-    if (row === 6) {
-      td.appendChild(document.createTextNode(col + 18));
-    }
-
-    tr.appendChild(td);
+    rows.push(<tr key={row}>{cells}</tr>);
   }
 
-  tbody.appendChild(tr);
-
+  return (
+    <div className="mapContainer">
+      <div className="tableWrapper">
+        <table className="mMap">
+          <tbody>{rows}</tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
-
-
-mMap.appendChild(tbody);
-
-
-document.body.appendChild(mMap);
 
 export default mMap;
