@@ -1,13 +1,12 @@
 
 import "./App.css";
 import React from "react";
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserProfile from './UserProfile/UserProfile.js'
 import Navbar from "./components/Navbar"
 import SpotsTable from "./spotstable/SpotsTable.js";
-import GMap from "./components/GMap";
-import ReservedSpot from "./reservedSpots/reservedspots.js";
-
+import MMap from "./mainMap/mMap";
+import ReservedSpot from "./reservedSpots/reservedspots";
 
 function App() {
   // Data Structures for Parking Spots
@@ -24,14 +23,14 @@ function App() {
 
         {/*NavBar is rendered across all routes */}
         <Navbar />
-        <GMap />
+        <MMap />
         <Routes>
           <Route path="/" element={<SpotsTable />} />
           <Route path="/user-profiles" element={<UserProfile />} />
-          <Route path="/reserve-spots" element={<ReservedSpot />} />
+
+          <Route path="/reservedSpots/:spotNumber" element={<ReservedSpot />} />
         </Routes>
       </Router>
-
     </div>
   );
 }
