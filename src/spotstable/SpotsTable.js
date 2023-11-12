@@ -1,17 +1,12 @@
 import React from 'react';
 import './styles.css'
 
-function SpotsTable() {
-    const spotsData = [];
-    
-    for (let i = 1; i <= 37; i++) {
-        spotsData.push({spotNumber: i, spotStatus: "Open" })
-    }
+function SpotsTable({ spots }) {
     const renderTableRows = () => {
-        return spotsData.map(spot => (
-          <tr key={spot.spotNumber}>
-            <td>{spot.spotNumber}</td>
-            <td>{spot.spotStatus}</td>
+        return Array.from(spots, ([spotNumber, spotStatus]) => (
+          <tr key={spotNumber}>
+            <td>{spotNumber}</td>
+            <td>{spotStatus}</td>
           </tr>
         ));
       };

@@ -20,31 +20,8 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import Drawer from "@mui/material/Drawer";
 import SpotsTable from "../spotstable/SpotsTable";
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
+
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
@@ -63,7 +40,7 @@ const StyledIconButton = styled(IconButton)({
   color: "inherit",
 });
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({ spots}) {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 //for closing the drawer
   const handleCloseDrawer = () => {
@@ -205,7 +182,7 @@ export default function PrimarySearchAppBar() {
         onClose={handleDrawerClose}
       >
         <div style={{ padding: '16px' }}>
-          <SpotsTable />
+          <SpotsTable spots={spots}/>
           <IconButton
             style={{ position: 'absolute', top: '16px', right: '16px' }}
             color="inherit"
