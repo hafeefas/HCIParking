@@ -7,10 +7,11 @@ import './reservedSpot.css';
 function ReservedSpot() {
   // Set the target time (10 minutes from now)
   const targetTime = new Date();
-  targetTime.setMinutes(targetTime.getMinutes() + 10);
+  targetTime.setMinutes(targetTime.getMinutes() + 10); 
 
-  // Set up state to hold the timer value
+  // Set up state to hold the timer value and expiration status
   const [timer, setTimer] = useState('10:00');
+  const [timerExpired, setTimerExpired] = useState(false);
 
   // Declare timerInterval variable in the component scope
   let timerInterval;
@@ -32,7 +33,9 @@ function ReservedSpot() {
     // When the timer reaches 0
     if (minutes <= 0 && seconds <= 0) {
       clearInterval(timerInterval); // Stop the timer
-      setTimer('00:00'); // Display 00:00 or other message
+      setTimer('00:00'); // Display 00:00 
+      setTimerExpired(true); // Set timer expiration status to true
+      window.alert("Your reservation time has expired."); 
     }
   };
 
@@ -49,7 +52,23 @@ function ReservedSpot() {
     updateTimer();
   }, []); // Empty dependency array ensures the effect runs only once (on mount)
 
+<<<<<<< Updated upstream
   const { spotNumber } = useParams();
+=======
+ 
+ // Handle click event for "Confirm Spot" button
+const handleConfirmSpot = () => {
+  if (timerExpired) {
+    window.alert("You cannot confirm this parking spot anymore as your reservation time has expired. Please go back to the main page to reserve a new spot.");
+  } else {
+    
+    //Navigate to the confirmation page
+    //window.location.href = '/confirmation-page'; // Replace with actual route
+  }
+};
+
+
+>>>>>>> Stashed changes
   return (
     <div>
       <hr className="top-line" />
@@ -64,9 +83,9 @@ function ReservedSpot() {
       <a href="javascript:history.back()" className="Back-btn">
         Go Back
       </a>
-      <a href="#" className="Confirm-btn">
+      <button onClick={handleConfirmSpot} className="Confirm-btn">
         Confirm Spot
-      </a>
+      </button>
       <hr className="bottom-line" />
     </div>
   );
