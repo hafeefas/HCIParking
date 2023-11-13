@@ -74,7 +74,7 @@
   cursor: pointer;
   margin: 0 10px;
 }
-.edit-button,
+.edit-button:hover,
 .confirm-button:hover {
   background-color: #39ff35;
 }
