@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserProfileIcon from './UserProfileIcon.png';
 import './UserProfile.css';
 import logo from './UserProfileIcon.png'
 
