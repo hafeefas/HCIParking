@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import checkmarkImage from './checkmark.png';
-import './reservedSpot.css';
-import logo from './checkmark.png'
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import checkmarkImage from "./checkmark.png";
+import "./reservedSpot.css";
+import logo from "./checkmark.png";
 
 function ReservedSpot(props) {
   const { spotNumber } = useParams();
   const navigate = useNavigate();
 
-  const [timer, setTimer] = useState('10:00');
+  const [timer, setTimer] = useState("10:00");
   const [isConfirmed, setIsConfirmed] = useState(false); // State to track confirmation status
   const [timerActive, setTimerActive] = useState(false); // State to control timer activation
 
@@ -30,13 +30,15 @@ function ReservedSpot(props) {
 
         // Display the time in the "timer" state
         setTimer(
-          `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+          `${minutes.toString().padStart(2, "0")}:${seconds
+            .toString()
+            .padStart(2, "0")}`
         );
 
         // When the timer reaches 0
         if (minutes <= 0 && seconds <= 0) {
           clearInterval(timerInterval);
-          setTimer('00:00');
+          setTimer("00:00");
         }
       };
 
@@ -46,19 +48,19 @@ function ReservedSpot(props) {
     return () => clearInterval(timerInterval);
   }, [timerActive]);
 
-    const handleConfirm = () => {
-      setIsConfirmed(true);
-      setTimerActive(true); // Start the timer on confirmation
-      props.reserveSpot(parseInt(spotNumber));
-    };
+  const handleConfirm = () => {
+    setIsConfirmed(true);
+    setTimerActive(true); // Start the timer on confirmation
+    props.reserveSpot(parseInt(spotNumber));
+  };
 
-    const handleCancel = () => {
-      setIsConfirmed(false);
-      setTimerActive(false);
-      setTimer('10:00'); // Reset the timer
-      props.cancelReservation(parseInt(spotNumber));
-      navigate('/'); // Reset to the homepgae if cancelled
-    };
+  const handleCancel = () => {
+    setIsConfirmed(false);
+    setTimerActive(false);
+    setTimer("10:00"); // Reset the timer
+    props.cancelReservation(parseInt(spotNumber));
+    navigate("/"); // Reset to the homepgae if cancelled
+  };
 
   return (
     <div>
@@ -77,15 +79,17 @@ function ReservedSpot(props) {
           </button>
         </div>
       )}
-       {isConfirmed && (
+      {isConfirmed && (
         <div>
           <p className="timeleft-prompt">
             You have 10 minutes to confirm your reserved parking space.
           </p>
           <p id="timer">{timer}</p>
-          <button onClick={handleCancel} className="Back-btn">
-            Cancel Reservation
-          </button>
+          <div className="button-container">
+            <button onClick={handleCancel} className="Back-btn">
+              Cancel Reservation
+            </button>
+          </div>
         </div>
       )}
       <hr className="bottom-line" />
