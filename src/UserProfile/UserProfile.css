@@ -50,7 +50,7 @@
 }
 
 .back-button {
-  background-color: red;
+  background-color: #d31919;;
   color: white;
   border-radius: 5px;
   padding: 10px 20px;
@@ -58,16 +58,23 @@
   cursor: pointer;
   margin: 0 10px;
 }
+.back-button:hover{
+  background-color: #ff0101;
+}
 
 .edit-button,
 .confirm-button {
-  background-color: green;
+  background-color:  #4CAF50;
   border-radius: 5px;
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
   margin: 0 10px;
+}
+.edit-button,
+.confirm-button:hover {
+  background-color: #39ff35;
 }
 
 body {
