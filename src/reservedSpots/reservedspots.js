@@ -13,10 +13,9 @@ function ReservedSpot(props) {
   const [timerActive, setTimerActive] = useState(false); // State to control timer activation
 
   useEffect(() => {
-    let timerInterval;
+    let timerId;
 
     if (timerActive) {
-      // Set the target time (10 minutes from now)
       const targetTime = new Date();
       targetTime.setMinutes(targetTime.getMinutes() + 10);
 
@@ -24,29 +23,30 @@ function ReservedSpot(props) {
         const currentTime = new Date();
         const timeDifference = new Date(targetTime - currentTime);
 
-        // Get minutes and seconds
         const minutes = timeDifference.getUTCMinutes();
         const seconds = timeDifference.getUTCSeconds();
 
-        // Display the time in the "timer" state
         setTimer(
           `${minutes.toString().padStart(2, "0")}:${seconds
             .toString()
             .padStart(2, "0")}`
         );
 
-        // When the timer reaches 0
         if (minutes <= 0 && seconds <= 0) {
-          clearInterval(timerInterval);
           setTimer("00:00");
+          setIsConfirmed(false);
+          props.cancelReservation(parseInt(spotNumber));
+          navigate("/"); // Reset to the homepage if canceled
+        } else {
+          timerId = setTimeout(updateTimer, 1000);
         }
       };
 
-      timerInterval = setInterval(updateTimer, 1000);
+      updateTimer();
     }
 
-    return () => clearInterval(timerInterval);
-  }, [timerActive]);
+    return () => clearTimeout(timerId);
+  }, [timerActive, spotNumber, props, navigate]);
 
   const handleConfirm = () => {
     setIsConfirmed(true);
@@ -59,7 +59,7 @@ function ReservedSpot(props) {
     setTimerActive(false);
     setTimer("10:00"); // Reset the timer
     props.cancelReservation(parseInt(spotNumber));
-    navigate("/"); // Reset to the homepgae if cancelled
+    navigate("/"); // Reset to the homepage if canceled
   };
 
   return (
