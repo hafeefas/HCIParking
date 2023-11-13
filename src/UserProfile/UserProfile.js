@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import UserProfileIcon from './UserProfileIcon.png';
 import './UserProfile.css';
 
 
@@ -23,7 +24,7 @@ function UserProfile() {
   return (
     <div>
       <div className="image-container">
-        <img src='./UserProfileIcon.png' alt="UserProfileIcon" />
+      <img src={UserProfileIcon} alt="UserProfileIcon" />
         <p>User Profile</p>
       </div>
 
