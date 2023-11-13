@@ -7,18 +7,15 @@ import IconButton from "@mui/material/IconButton";
 import CancelPresentationTwoTone from "@mui/icons-material/CancelPresentationTwoTone";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Drawer from "@mui/material/Drawer";
 import SpotsTable from "../spotstable/SpotsTable";
+
 
 
 
@@ -118,18 +115,6 @@ export default function PrimarySearchAppBar({ spots}) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <StyledIconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </StyledIconButton>
-        <p>Notifications</p>
-      </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <StyledIconButton
           size="large"

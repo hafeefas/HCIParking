@@ -22,7 +22,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar spots={spots}/>
+        <Navbar spots={spots} />
         <MMap />
         <Routes>
           <Route path="/" element={<SpotsTable spots={spots} />} />
