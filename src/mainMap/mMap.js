@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import "./mMap.css";
 
-function mMap() {
+function mMap({ spots }) {
   const rows = [];
   for (let row = 1; row <= 7; row++) {
     const cells = [];
     for (let col = 1; col <= 18; col++) {
       const spotNumber = row === 1 ? col : col + 18;
+      const isReserved = spots.get(spotNumber) === "RESERVED";
       cells.push(
-        <td key={col} className="table-cell">
+        <td key={col} className={`table-cell ${isReserved ? 'reserved' : ''}`}>
           {(row === 1 || row === 7) && (
-            // Correct usage of template literals for dynamic path
             <Link to={`/reservedSpots/${spotNumber}`}>{spotNumber}</Link>
           )}
         </td>
@@ -19,6 +19,7 @@ function mMap() {
     }
     rows.push(<tr key={row}>{cells}</tr>);
   }
+
 
   return (
     <div className="mapContainer">
