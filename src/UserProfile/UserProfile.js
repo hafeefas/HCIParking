@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './UserProfile.css';
 
+
 function UserProfile() {
   const [isEditing, setIsEditing] = useState(false);
   const [userData, setUserData] = useState({
@@ -8,6 +9,8 @@ function UserProfile() {
     address: '',
     accessibilityNeeds: ''
   });
+
+  
 
   const handleInputChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -20,7 +23,7 @@ function UserProfile() {
   return (
     <div>
       <div className="image-container">
-        <img src="UserProfileIcon.png" alt="UserProfileIcon" />
+        <img src='./UserProfileIcon.png' alt="UserProfileIcon" />
         <p>User Profile</p>
       </div>
 
