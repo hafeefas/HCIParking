@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './reservedSpot.css';
+import logo from './checkmark.png'
 
 function ReservedSpot(props) {
   const { spotNumber } = useParams();
@@ -63,7 +64,7 @@ function ReservedSpot(props) {
       <hr className="top-line" />
       <div className="header">
         <h1 className="title-prompt">Reserve Spot #{spotNumber}</h1>
-        <img className="logo" src="checkmark.png" alt="Checkmark" />
+        <img className="logo" src={logo} alt="Checkmark" />
       </div>
       {!isConfirmed && (
         <div className="button-container">
