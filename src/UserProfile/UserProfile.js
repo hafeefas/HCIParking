@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UserProfileIcon from './UserProfileIcon.png';
 import './UserProfile.css';
-
+import logo from './UserProfileIcon.png'
 
 function UserProfile() {
   const [isEditing, setIsEditing] = useState(false);
@@ -24,10 +24,10 @@ function UserProfile() {
   return (
     <div>
       <div className="image-container">
-      <img src={UserProfileIcon} alt="UserProfileIcon" />
+        <img src={logo} alt="UserProfileIcon" />
         <p>User Profile</p>
       </div>
-
+    
       <div className="text-boxes">
         {isEditing ? (
           <div>
