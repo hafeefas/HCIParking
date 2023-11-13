@@ -76,7 +76,7 @@ function UserProfile() {
 
       <div className="button-container">
         <button className="back-button" onClick={() => window.location.href = '/'}>Back</button>
-        <button className={isEditing ? "confirm-button" : "edit-button"} onClick={toggleEditMode}>
+        <button className={isEditing ? "edit-button" : "confirm-button"} onClick={toggleEditMode}>
           {isEditing ? "Edit" : "Confirm Changes"}
           </button>
       </div>
