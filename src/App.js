@@ -8,7 +8,7 @@ import ReservedSpot from "./reservedSpots/reservedspots";
 
 function App() {
   const [spots, setSpots] = useState(new Map(
-    Array.from({ length: 37 }, (_, i) => [i + 1, "OPEN"])
+    Array.from({ length: 36 }, (_, i) => [i + 1, "OPEN"])
   ));
 
   const reserveSpot = (spotNumber) => {

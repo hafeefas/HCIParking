@@ -17,9 +17,6 @@ import Drawer from "@mui/material/Drawer";
 import SpotsTable from "../spotstable/SpotsTable";
 
 
-
-
-
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
@@ -93,7 +90,7 @@ export default function PrimarySearchAppBar({ spots}) {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>
-        <Link to='/user-profiles'> Profiles</Link>
+        <Link to='/user-profiles'> My Account</Link>
       </MenuItem>
     </Menu>
   );
