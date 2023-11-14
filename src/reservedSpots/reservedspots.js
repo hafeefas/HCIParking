@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./reservedSpot.css";
 import logo from "./checkmark.png";
+import MMap from "../mainMap/MMap";
 
 function ReservedSpot(props) {
   const { spotNumber } = useParams();
@@ -10,6 +11,11 @@ function ReservedSpot(props) {
   const [timer, setTimer] = useState("10:00");
   const [isConfirmed, setIsConfirmed] = useState(false); // State to track confirmation status
   const [timerActive, setTimerActive] = useState(false); // State to control timer activation
+
+
+  const [spots] = useState(new Map(
+    Array.from({ length: 36 }, (_, i) => [i + 1, "OPEN"])
+  ));
 
   useEffect(() => {
     let timerId;
@@ -92,6 +98,9 @@ function ReservedSpot(props) {
         </div>
       )}
       <hr className="bottom-line" />
+
+      <MMap spots={spots}/>
+
     </div>
   );
 }
