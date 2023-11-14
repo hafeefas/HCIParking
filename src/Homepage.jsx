@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import MMap from './mainMap/MMap';
+import MMap from './mainMap/mMap';
 
 function Homepage() {
 
