@@ -127,7 +127,8 @@ export default function PrimarySearchAppBar({ spots }) {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            Parking Project
+
+            <p onClick={() => window.location.href = '/HCIParking/'} style={{cursor:"pointer"}}>Parking Project</p>
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <StyledIconButton onClick={handleDrawerOpen}>
@@ -174,7 +175,7 @@ export default function PrimarySearchAppBar({ spots }) {
         open={isDrawerOpen}
         onClose={handleDrawerClose}
       >
-        <div style={{ padding: '16px' }}>
+        <div style={{ padding: '16px', marginTop:"20px" }}>
           <SpotsTable spots={spots} />
           <IconButton
             style={{ position: 'absolute', top: '16px', right: '16px' }}
