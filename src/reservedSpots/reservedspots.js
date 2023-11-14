@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./reservedSpot.css";
 import logo from "./checkmark.png";
-import MMap from "../mainMap/MMap";
+import MMap from "../mainMap/mMap";
 
 function ReservedSpot(props) {
   const { spotNumber } = useParams();
@@ -20,38 +20,50 @@ function ReservedSpot(props) {
   useEffect(() => {
     let timerId;
 
-    if (timerActive) {
+    const updateTimer = () => {
+      // Set the target time (10 minutes from now)
       const targetTime = new Date();
       targetTime.setMinutes(targetTime.getMinutes() + 10);
 
-      const updateTimer = () => {
+      const update = () => {
         const currentTime = new Date();
         const timeDifference = new Date(targetTime - currentTime);
 
+        // Get minutes and seconds
         const minutes = timeDifference.getUTCMinutes();
         const seconds = timeDifference.getUTCSeconds();
 
+        // Display the time in the "timer" state
         setTimer(
-          `${minutes.toString().padStart(2, "0")}:${seconds
-            .toString()
-            .padStart(2, "0")}`
+          `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
         );
 
+        // When the timer reaches 0
         if (minutes <= 0 && seconds <= 0) {
           setTimer("00:00");
           setIsConfirmed(false);
+          setTimerActive(false);
           props.cancelReservation(parseInt(spotNumber));
           navigate("/"); // Reset to the homepage if canceled
         } else {
-          timerId = setTimeout(updateTimer, 1000);
+          // Continue updating the timer
+          timerId = setTimeout(update, 1000);
         }
       };
 
+      update(); // Initial call to start the timer
+
+      // Cleanup function
+      return () => {
+        clearTimeout(timerId); // Clear the timeout when the component is unmounted or timer is stopped
+      };
+    };
+
+    if (timerActive) {
       updateTimer();
     }
 
-    return () => clearTimeout(timerId);
-  }, [timerActive, spotNumber, props, navigate]);
+  }, [timerActive, navigate, spotNumber, props]);
 
   const handleConfirm = () => {
     setIsConfirmed(true);
@@ -87,7 +99,7 @@ function ReservedSpot(props) {
       {isConfirmed && (
         <div>
           <p className="timeleft-prompt">
-            You have 10 minutes remaining for your reserved parking space.
+            You have 10 minutes of reserved parking space.
           </p>
           <p id="timer">{timer}</p>
           <div className="button-container">
