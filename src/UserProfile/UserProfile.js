@@ -75,7 +75,7 @@ function UserProfile() {
       </div>
 
       <div className="button-container">
-        <button className="back-button" onClick={() => window.location.href = '/'}>Back</button>
+        <button className="back-button" onClick={() => window.location.href = '/HCIParking/'}>Back To Map</button>
         <button className={isEditing ? "edit-button" : "confirm-button"} onClick={toggleEditMode}>
           {isEditing ? "Edit" : "Confirm Changes"}
           </button>
