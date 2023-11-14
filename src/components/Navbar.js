@@ -22,9 +22,9 @@ const StyledIconButton = styled(IconButton)({
   color: "inherit",
 });
 
-export default function PrimarySearchAppBar({ spots}) {
+export default function PrimarySearchAppBar({ spots }) {
   const [isDrawerOpen, setDrawerOpen] = React.useState(false);
-//for closing the drawer
+  //for closing the drawer
   const handleCloseDrawer = () => {
     setDrawerOpen(false);
   };
@@ -78,12 +78,12 @@ export default function PrimarySearchAppBar({ spots}) {
       onClose={handleMenuClose}
     >
       <Link to='/user-profiles'>
-      <MenuItem onClick={handleMenuClose}>
-         My Account
-      </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+          My Account
+        </MenuItem>
       </Link>
     </Menu>
-  
+
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -131,13 +131,12 @@ export default function PrimarySearchAppBar({ spots}) {
             Parking Project
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <StyledIconButton>
+          <StyledIconButton onClick={handleDrawerOpen}>
             <Typography
               variant="h6"
               noWrap
               component="div"
               sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
-              onClick={handleDrawerOpen}
             >
               Current Spot Availability
             </Typography>
@@ -177,7 +176,7 @@ export default function PrimarySearchAppBar({ spots}) {
         onClose={handleDrawerClose}
       >
         <div style={{ padding: '16px' }}>
-          <SpotsTable spots={spots}/>
+          <SpotsTable spots={spots} />
           <IconButton
             style={{ position: 'absolute', top: '16px', right: '16px' }}
             color="inherit"
