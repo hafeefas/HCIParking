@@ -87,7 +87,7 @@ function ReservedSpot(props) {
       {isConfirmed && (
         <div>
           <p className="timeleft-prompt">
-            You have 10 minutes to confirm your reserved parking space.
+            You have 10 minutes remaining for your reserved parking space.
           </p>
           <p id="timer">{timer}</p>
           <div className="button-container">
