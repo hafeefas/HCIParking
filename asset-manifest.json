@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HCIParking/static/css/main.7e9fb998.css",
-    "main.js": "/HCIParking/static/js/main.afed17a2.js",
+    "main.js": "/HCIParking/static/js/main.cea41843.js",
     "static/js/787.9722a464.chunk.js": "/HCIParking/static/js/787.9722a464.chunk.js",
     "static/media/Satellite2.jpeg": "/HCIParking/static/media/Satellite2.65c6989c3957dfa2a634.jpeg",
     "static/media/checkmark.png": "/HCIParking/static/media/checkmark.950d576512cc31f6f23b.png",
@@ -9,11 +9,11 @@
     "static/media/UserProfileIcon.png": "/HCIParking/static/media/UserProfileIcon.89b7b4c732932e09ae8c.png",
     "index.html": "/HCIParking/index.html",
     "main.7e9fb998.css.map": "/HCIParking/static/css/main.7e9fb998.css.map",
-    "main.afed17a2.js.map": "/HCIParking/static/js/main.afed17a2.js.map",
+    "main.cea41843.js.map": "/HCIParking/static/js/main.cea41843.js.map",
     "787.9722a464.chunk.js.map": "/HCIParking/static/js/787.9722a464.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e9fb998.css",
-    "static/js/main.afed17a2.js"
+    "static/js/main.cea41843.js"
   ]
 }
