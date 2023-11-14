@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserProfile from './UserProfile/UserProfile.js';
 import Navbar from "./components/Navbar";
 import SpotsTable from "./spotstable/SpotsTable.js";
-import MMap from "./mainMap/MMap.js";
+// import MMap from "./mainMap/MMap.js";
 import ReservedSpot from "./reservedSpots/reservedspots";
 import Homepage from "./Homepage.jsx";
 
@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <Router>
+      <Router basename="/HCIParking">
         <Navbar spots={spots} />
         {/* <MMap spots={spots} /> */}
         <Routes>

@@ -77,10 +77,13 @@ export default function PrimarySearchAppBar({ spots}) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
+      <Link to='/user-profiles'>
       <MenuItem onClick={handleMenuClose}>
-        <Link to='/user-profiles'> My Account</Link>
+         My Account
       </MenuItem>
+      </Link>
     </Menu>
+  
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
