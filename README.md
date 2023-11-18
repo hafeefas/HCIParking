@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Brooklyn College Parking Finder App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a class assignment aimed at addressing the recurring parking issues around Brooklyn College campus. Often, students and faculty members spend considerable time searching for parking spaces, leading to inefficiency and frustration. The goal of this app is to provide a solution by displaying a satellite image of the parking spaces on campus. Users can conveniently reserve a parking spot, check the availability of free spots, and identify reserved areas to streamline the process of finding parking.
 
+## Getting Started with Brooklyn Parking Finder
+
+Before running the application, make sure to install the required dependencies. In the project directory, run:
+
+```bash
+npm i
+```
 ## Available Scripts
 
-In the project directory, you can run:
+Once the dependencies are installed, you can run the following scripts:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Launches the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes, and any lint errors will be displayed in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Initiates the test runner in interactive watch mode. For more information on running tests, refer to the [testing documentation](https://facebook.github.io/create-react-app/docs/running-tests).
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Builds the app for production in the `build` folder, optimizing it for the best performance. The build is minified, and filenames include hashes. Your app is now ready to be deployed. Refer to the [deployment documentation](https://facebook.github.io/create-react-app/docs/deployment) for further information.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Note: this is a one-way operation. Once you eject, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If you're dissatisfied with the build tool and configuration choices, you can eject at any time. This command copies all configuration files and transitive dependencies directly into your project, providing full control. Be cautious, as this is an irreversible operation.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Explore the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started) for more details on this project's setup.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To deepen your understanding of React, refer to the official [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Additional Sections
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Certain sections in the Create React App documentation have been moved:
 
-### Analyzing the Bundle Size
+- [Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- [Analyzing the Bundle Size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Making a Progressive Web App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [Advanced Configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Refer to the provided links for in-depth insights into these topics.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Review the [deployment documentation](https://facebook.github.io/create-react-app/docs/deployment) for guidance on deploying your Brooklyn College Parking Finder App.
 
-### `npm run build` fails to minify
+### Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you encounter issues with `npm run build` failing to minify, consult the [troubleshooting documentation](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) for assistance.
+
