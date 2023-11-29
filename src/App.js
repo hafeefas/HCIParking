@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <Router basename="/HCIParking">
+      <Router basename="/HCIParking2">
         <Navbar spots={spots} />
         {/* <MMap spots={spots} /> */}
         <Routes>
