@@ -24,7 +24,7 @@ function App() {
     <div>
       <Router basename="/HCIParking">
          <Navbar spots={spots} /> 
-         <MMap spots={spots} /> 
+         {/* <MMap spots={spots} />  */}
         <Routes>
         <Route path="/" element = {<Homepage spots={spots}/>} />
           <Route path="/spots" element={<SpotsTable spots={spots} />} />
