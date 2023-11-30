@@ -22,7 +22,7 @@ function App() {
 // deployment
   return (
     <div>
-      <Router basename="/HCIParking2">
+      <Router basename="/HCIParking">
         <Navbar spots={spots} />
         {/* <MMap spots={spots} /> */}
         <Routes>
