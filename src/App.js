@@ -16,7 +16,11 @@ function App() {
 
   const reserveSpot = (spotNumber) => {
     setSpots(new Map(spots).set(spotNumber, "RESERVED"));
+    console.log("INSIDE RESERVE SPOT #: "+ spots + spotNumber);
+    console.log(spots );
   };
+
+  
 
   const cancelReservation = (spotNumber) => {
     setSpots(new Map(spots).set(spotNumber, "OPEN"));
