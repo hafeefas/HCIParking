@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import MMap from './mainMap/mMap';
+import "./mainMap/mMap.css"//when mmap is rendered here w/ the css, the map disappears after a spot is reserved
 
 function Homepage() {
 

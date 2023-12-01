@@ -111,7 +111,7 @@ function ReservedSpot(props) {
       )}
       <hr className="bottom-line" />
 
-      <MMap spots={spots}/>
+      {/* <MMap spots={spots}/> */}
 
     </div>
   );

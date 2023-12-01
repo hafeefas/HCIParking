@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UserProfile from './UserProfile/UserProfile.js';
 import Navbar from "./components/Navbar";
 import SpotsTable from "./spotstable/SpotsTable.js";
- import MMap from "./mainMap/mMap.js";
+ import MMap from "./mainMap/mMap.js"; 
+ //mmap has working css here but the confirmation/reservation appears on one page w/ the map
+
 import ReservedSpot from "./reservedSpots/reservedspots";
 import Homepage from "./Homepage.jsx";
 
@@ -19,7 +21,7 @@ function App() {
   const cancelReservation = (spotNumber) => {
     setSpots(new Map(spots).set(spotNumber, "OPEN"));
   };
-// deployment
+
   return (
     <div>
       <Router basename="/HCIParking">
