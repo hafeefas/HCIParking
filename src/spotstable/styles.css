@@ -3,7 +3,8 @@
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 20px;
+  margin: 1px;
+  cursor: pointer;
 }
 
 th, td {

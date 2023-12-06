@@ -9,6 +9,7 @@ import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { Link } from 'react-router-dom'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
@@ -128,7 +129,7 @@ export default function PrimarySearchAppBar({ spots }) {
             sx={{ display: { xs: "none", sm: "block" } }}
           >
 
-            <p onClick={() => window.location.href = '/HCIParking/'} style={{cursor:"pointer"}}>Parking Project</p>
+            <p onClick={() => window.location.href = '/HCIParking/'} style={{ cursor: "pointer" }}>Parking Project</p>
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <StyledIconButton onClick={handleDrawerOpen}>
@@ -136,11 +137,14 @@ export default function PrimarySearchAppBar({ spots }) {
               variant="h6"
               noWrap
               component="div"
-              sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
+              sx={{ display: { xs: 'none', sm: 'block' }, cursor: 'pointer' }}
             >
               Current Spot Availability
             </Typography>
+            <ArrowDropDownIcon />
           </StyledIconButton>
+
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <StyledIconButton
               size="large"
@@ -175,7 +179,7 @@ export default function PrimarySearchAppBar({ spots }) {
         open={isDrawerOpen}
         onClose={handleDrawerClose}
       >
-        <div style={{ padding: '16px', marginTop:"20px" }}>
+        <div style={{ padding: '16px', marginTop: "20px" }}>
           <SpotsTable spots={spots} />
           <IconButton
             style={{ position: 'absolute', top: '16px', right: '16px' }}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "./mMap.css";
 
 function mMap({ spots }) {
+  // console.log(spots)
   const rows = [];
   for (let row = 1; row <= 7; row++) {
     const cells = [];
